@@ -1,0 +1,22 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "This is My Nexter Version 1.0.0",
+  "browserslist": "last 2 versions, > 0.5% and ie >= 11",
+  "scripts": {
+    "dev": "parcel index.html ",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Stoica Robert",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "parcel": "^2.8.2"
+  },
+  "dependencies": {
+    "browser-sync": "^2.29.3",
+    "core-js": "^3.32.2",
+    "fracty": "^1.0.11",
+    "regenerator-runtime": "^0.14.0"
+  }
+}
