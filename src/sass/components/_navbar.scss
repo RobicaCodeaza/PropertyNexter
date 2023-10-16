@@ -1,19 +1,18 @@
 @use '../abstracts/' as *;
-.sidebar {
+.navbar {
   background-color: $color-primary;
-
+  background-image: linear-gradient(
+    rgba($color-secondary, 0.9),
+    rgba($color-secondary, 0.9)
+  );
   grid-column: sidebar-start/sidebar-end;
-  grid-row: 1/-1;
 
   display: flex;
-  justify-content: center;
 
-  @media only screen and (max-width: $bp-large) {
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    justify-content: flex-end;
-    align-items: center;
-  }
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .nav-btn {
@@ -24,31 +23,30 @@
 
   background-color: #fff;
   height: 2px;
-  width: 4.5rem;
+  width: 3.5rem;
+  margin-top: 0;
+  margin-right: 3rem;
   &::before,
   &::after {
     display: block;
     content: '';
     background-color: #fff;
     height: 2px;
-    width: 4.5rem;
+    width: 3.5rem;
   }
   &::before {
-    transform: translateY(-1.5rem);
+    transform: translateY(-1rem);
   }
   &::after {
-    transform: translateY(+1.3rem);
+    transform: translateY(+0.8rem);
   }
 
   @media only screen and (max-width: $bp-large) {
-    margin-top: 0;
-    margin-right: 3rem;
-
     &::before {
-      transform: translateY(-1.2rem);
+      transform: translateY(-0.8rem);
     }
     &::after {
-      transform: translateY(1rem);
+      transform: translateY(0.6rem);
     }
   }
 }
