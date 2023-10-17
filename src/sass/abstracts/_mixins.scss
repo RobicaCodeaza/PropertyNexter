@@ -1,0 +1,8 @@
+@mixin changeBackground($color-1, $color-2, $opacity, $url) {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-1, $opacity),
+      rgba($color-2, $opacity)
+    ),
+    url($url);
+}
