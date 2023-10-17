@@ -7,7 +7,7 @@ body {
   display: grid;
 
   grid-template-rows:
-    5rem calc(100dvh - 5rem) minmax(min-content, 100dvh) minmax(40vw, 100dvh)
+    5rem calc(100dvh - 5rem) minmax(max-content, 250dvh) minmax(40vw, 100dvh)
     min-content minmax(min-content, 100dvh) min-content;
   grid-template-columns:
     [ full-start] minmax(6rem, 1fr)
@@ -37,8 +37,8 @@ body {
   grid-column: full-start/full-end;
   display: grid;
   grid-template-columns: subgrid;
-
+  background-color: hsl(0, 0%, 98%);
   &--features {
-    padding: min(5vw, 10rem);
+    // padding: min(5vw, 10rem);
   }
 }
