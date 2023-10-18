@@ -31,6 +31,17 @@ body {
   &--dark {
     color: $color-grey-dark-1;
   }
+
+  &--features {
+    background-image: linear-gradient(
+      to right,
+      $color-primary,
+      $color-grey-dark-1
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+    // align-self: end;
+  }
 }
 
 .heading-3 {
@@ -38,16 +49,29 @@ body {
   font-size: 1.6rem;
   color: $color-primary;
   text-transform: uppercase;
+
+  &--features {
+    font-style: italic;
+
+    background-image: linear-gradient(
+      to right,
+      $color-primary,
+      $color-grey-dark-1
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+  }
 }
 
 .heading-4 {
   @extend %heading;
-  font-size: 1.9rem;
+  font-size: 2rem;
 
   &--light {
     color: $color-grey-light-1;
   }
   &--dark {
+    letter-spacing: 0.5px;
     color: $color-grey-dark-1;
   }
 }

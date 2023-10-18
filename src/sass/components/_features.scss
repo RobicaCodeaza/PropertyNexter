@@ -3,27 +3,13 @@
 .features {
   &-content {
     grid-column: center-start/ center-end;
-
     @supports (display: grid) {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(1fr, 30rem));
-      grid-template-rows: repeat(auto-fit, 30rem);
-      // align-items: start;
+      grid-template-columns: repeat(3, minmax(25rem, 32.5rem));
+      grid-template-rows: repeat(4, minmax(15rem, 22.5rem));
       justify-content: center;
       gap: 6rem;
     }
-  }
-  &-title {
-    text-align: center;
-    grid-column: center-start/center-end;
-    background-image: linear-gradient(
-      to right,
-      $color-primary,
-      $color-grey-dark-1
-    );
-    color: transparent;
-    -webkit-background-clip: text;
-    // align-self: end;
   }
 }
 
@@ -31,54 +17,95 @@
   float: left;
   width: 33.33%;
   margin-bottom: 6rem;
+  transition: all 0.2s;
 
   @supports (display: grid) {
     width: auto;
     margin-bottom: 0;
   }
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-row-gap: 1.5rem;
-  grid-column-gap: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
+  padding: 2.4rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.199);
 
   &__icon {
-    fill: $color-primary;
-    width: 4.5rem;
     height: 4.5rem;
-    grid-row: 1 / span 2;
-    transform: translateY(-1rem);
+    width: 4.5rem;
+    margin-top: auto;
+    margin-left: auto;
+    // grid-row: 1 / span 2;
+    // transform: translateY(-1rem);
 
     &--luxury {
+      fill: hsl(34, 97%, 64%);
     }
     &--best {
+      fill: hsl(212, 86%, 64%);
     }
     &--location {
+      fill: hsl(180, 62%, 55%);
     }
     &--home {
+      fill: hsl(234, 12%, 34%);
     }
     &--realtors {
+      fill: hsl(0, 78%, 62%);
     }
     &--secure {
+      fill: hsl(229, 6%, 66%);
     }
   }
 
   &__text {
     font-size: 1.7rem;
+    line-height: 1.5;
     // grid-column: 2/3;
   }
 
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+
   &--luxury {
+    border-top: 0.5rem solid hsl(34, 97%, 64%);
+
+    &:hover {
+      box-shadow: 0 1rem 2rem 0 hsl(34, 97%, 64%);
+    }
   }
   &--best {
+    border-top: 0.5rem solid hsl(212, 86%, 64%);
+
+    &:hover {
+      box-shadow: 0 1rem 2rem 0 hsl(212, 86%, 64%);
+    }
   }
   &--location {
+    border-top: 0.5rem solid hsl(180, 62%, 55%);
+    &:hover {
+      box-shadow: 0 1rem 2rem 0 hsl(180, 62%, 55%);
+    }
   }
   &--home {
+    border-top: 0.5rem solid hsl(234, 12%, 34%);
+    &:hover {
+      box-shadow: 0 1rem 2rem 0 hsl(234, 12%, 34%);
+    }
   }
   &--realtors {
+    border-top: 0.5rem solid hsl(0, 78%, 62%);
+    &:hover {
+      box-shadow: 0 1rem 2rem 0 hsl(0, 78%, 62%);
+    }
   }
   &--secure {
+    border-top: 0.5rem solid hsl(229, 6%, 66%);
+    &:hover {
+      box-shadow: 0 1rem 2rem 0 hsl(229, 6%, 66%);
+    }
   }
 }
 

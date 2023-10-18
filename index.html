@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <meta
+      name="description"
+      content="RealProperty is a website dedicated to show luxurious and select housing options for clients that are looking for a classy/modern feeling"
+    />
+    <link rel="icon" type="image/png" href="./src/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="./src/img/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <link
       href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/sass/style.scss" />
-    <link rel="shortcut icon" type="image/png" href="./src/img/favicon.png" />
 
-    <title>nexter &mdash; your home, your freedom</title>
+    <title>RealProperty &mdash; your home, your freedom</title>
   </head>
   <body class="container">
     <div class="navbar">
@@ -72,7 +78,13 @@
       </div>
     </header>
     <section class="section section--features">
-      <h2 class="heading-2 features-title mb-hg">Take our word for granted!</h2>
+      <h2 class="heading-2 heading-2--features aligned-title mb-sm">
+        Take our word for granted!
+      </h2>
+      <h3 class="heading-3 heading-3--features aligned-title mb-hg">
+        Sometimes simple and modern are not that easy to be found in the same
+        combination
+      </h3>
       <div class="features-content">
         <div
           class="feature-picture feature-picture--big feature-picture--1"
@@ -81,64 +93,63 @@
           class="feature-picture feature-picture--small feature-picture--2"
         ></div>
         <div class="feature feature--luxury">
-          <svg class="feature__icon feature__icon--luxury">
-            <use xlink:href="/src/img/sprite.svg#icon-global" />
-          </svg>
           <h4 class="heading-4 heading-4--dark">World's best luxury homes</h4>
           <p class="feature__text">
             We have one of the finest offers on the market. The simple classic
-            design blends well with modern lines and architectural inovations.
+            design blends well with modern lines.
           </p>
+          <svg class="feature__icon feature__icon--luxury">
+            <use xlink:href="/src/img/sprite.svg#icon-global" />
+          </svg>
         </div>
         <div class="feature feature--best">
-          <svg class="feature__icon feature__icon--best">
-            <use xlink:href="/src/img/sprite.svg#icon-trophy" />
-          </svg>
           <h4 class="heading-4 heading-4--dark">Only the best properties</h4>
           <p class="feature__text">
             Before inauguration and resell our houses are certified in terms of
-            quality offered. In this process architects, real estate agents and
-            local authorities take part.
+            quality offered.
           </p>
+          <svg class="feature__icon feature__icon--best">
+            <use xlink:href="/src/img/sprite.svg#icon-trophy" />
+          </svg>
         </div>
         <div class="feature feature--location">
-          <svg class="feature__icon feature__icon--location">
-            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
-          </svg>
           <h4 class="heading-4 heading-4--dark">All homes in top locations</h4>
           <p class="feature__text">
             Properties are located in top areas after exact research on the most
             evaluated locations.
           </p>
+          <svg class="feature__icon feature__icon--location">
+            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+          </svg>
         </div>
         <div class="feature feature--home">
-          <svg class="feature__icon feature__icon--home">
-            <use xlink:href="/src/img/sprite.svg#icon-key" />
-          </svg>
           <h4 class="heading-4 heading-4--dark">New home in one week</h4>
           <p class="feature__text">
             We promise fast procedures, having your dream home in maximum one
             week.
           </p>
+          <svg class="feature__icon feature__icon--home">
+            <use xlink:href="/src/img/sprite.svg#icon-key" />
+          </svg>
         </div>
         <div class="feature feature--realtors">
+          <h4 class="heading-4 heading-4--dark">Top 1% realtors</h4>
+          <p class="feature__text">
+            Our realtors have experience selling high value properties. Our
+            audience are select people.
+          </p>
           <svg class="feature__icon feature__icon--realtors">
             <use xlink:href="/src/img/sprite.svg#icon-presentation" />
           </svg>
-          <h4 class="heading-4 heading-4--dark">Top 1% realtors</h4>
-          <p class="feature__text">
-            Our realtors have experience selling high value properties.Our
-            audience are select people.
-          </p>
         </div>
         <div class="feature feature--secure">
-          <svg class="feature__icon feature__icon--secure">
-            <use xlink:href="/src/img/sprite.svg#icon-lock" />
-          </svg>
           <h4 class="heading-4 heading-4--dark">Secure payments on nexter</h4>
           <p class="feature__text">
             Payments are simplified with our direct payment transaction.
           </p>
+          <svg class="feature__icon feature__icon--secure">
+            <use xlink:href="/src/img/sprite.svg#icon-lock" />
+          </svg>
         </div>
         <div
           class="feature-picture feature-picture--small feature-picture--3"
@@ -151,7 +162,7 @@
     <section class="section section--story">
       <div class="story__pictures">
         <img
-          src="/src//img/story-1.jpeg"
+          src="/src//img/story-1.jpg"
           alt="Couple with new house"
           class="story__img--1"
         />
@@ -174,198 +185,200 @@
         <button class="btn">Find your own home</button>
       </div>
     </section>
-    <section class="homes">
-      <div class="home">
-        <img src="/src/img/house-1.jpeg" alt="House 1" class="home__img" />
-        <svg class="home__like">
-          <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
-        </svg>
-        <h5 class="home__name">Beautiful family house</h5>
-        <div class="home__location">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+    <section class="section section--homes">
+      <div class="homes-content">
+        <div class="home">
+          <img src="/src/img/house-1.jpeg" alt="House 1" class="home__img" />
+          <svg class="home__like">
+            <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <p>USA</p>
+          <h5 class="home__name">Beautiful family house</h5>
+          <div class="home__location">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+            </svg>
+            <p>USA</p>
+          </div>
+          <div class="home__rooms">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+            </svg>
+            <p>5 rooms</p>
+          </div>
+          <div class="home__area">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-expand" />
+            </svg>
+            <p>325 m <sup>2</sup></p>
+          </div>
+          <div class="home__price">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-key" />
+            </svg>
+            <p>$1,200,000</p>
+          </div>
+          <button class="btn home__btn home__btn">Contact realtor</button>
         </div>
-        <div class="home__rooms">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+        <div class="home">
+          <img src="/src/img/house-2.jpeg" alt="House 2" class="home__img" />
+          <svg class="home__like">
+            <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <p>5 rooms</p>
+          <h5 class="home__name">Modern Glass Villa</h5>
+          <div class="home__location">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+            </svg>
+            <p>Canada</p>
+          </div>
+          <div class="home__rooms">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+            </svg>
+            <p>6 rooms</p>
+          </div>
+          <div class="home__area">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-expand" />
+            </svg>
+            <p>450 m <sup>2</sup></p>
+          </div>
+          <div class="home__price">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-key" />
+            </svg>
+            <p>$2,750,000</p>
+          </div>
+          <button class="btn home__btn">Contact realtor</button>
         </div>
-        <div class="home__area">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-expand" />
+        <div class="home">
+          <img src="/src/img/house-3.jpeg" alt="House 3" class="home__img" />
+          <svg class="home__like">
+            <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <p>325 m <sup>2</sup></p>
+          <h5 class="home__name">Cozy Country House</h5>
+          <div class="home__location">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+            </svg>
+            <p>UK</p>
+          </div>
+          <div class="home__rooms">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+            </svg>
+            <p>4 rooms</p>
+          </div>
+          <div class="home__area">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-expand" />
+            </svg>
+            <p>250 m <sup>2</sup></p>
+          </div>
+          <div class="home__price">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-key" />
+            </svg>
+            <p>$850,000</p>
+          </div>
+          <button class="btn home__btn">Contact realtor</button>
         </div>
-        <div class="home__price">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-key" />
+        <div class="home">
+          <img src="/src/img/house-4.jpeg" alt="House 4" class="home__img" />
+          <svg class="home__like">
+            <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <p>$1,200,000</p>
+          <h5 class="home__name">Large Rustical Villa</h5>
+          <div class="home__location">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+            </svg>
+            <p>Portugal</p>
+          </div>
+          <div class="home__rooms">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+            </svg>
+            <p>6 rooms</p>
+          </div>
+          <div class="home__area">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-expand" />
+            </svg>
+            <p>480 m <sup>2</sup></p>
+          </div>
+          <div class="home__price">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-key" />
+            </svg>
+            <p>$1,950,000</p>
+          </div>
+          <button class="btn home__btn">Contact realtor</button>
         </div>
-        <button class="btn home__btn home__btn">Contact realtor</button>
-      </div>
-      <div class="home">
-        <img src="/src/img/house-2.jpeg" alt="House 2" class="home__img" />
-        <svg class="home__like">
-          <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
-        </svg>
-        <h5 class="home__name">Modern Glass Villa</h5>
-        <div class="home__location">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+        <div class="home">
+          <img src="/src/img/house-5.jpeg" alt="House 5" class="home__img" />
+          <svg class="home__like">
+            <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <p>Canada</p>
+          <h5 class="home__name">Majestic Palace House</h5>
+          <div class="home__location">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+            </svg>
+            <p>Germany</p>
+          </div>
+          <div class="home__rooms">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+            </svg>
+            <p>18 rooms</p>
+          </div>
+          <div class="home__area">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-expand" />
+            </svg>
+            <p>4230 m <sup>2</sup></p>
+          </div>
+          <div class="home__price">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-key" />
+            </svg>
+            <p>$9,500,000</p>
+          </div>
+          <button class="btn home__btn">Contact realtor</button>
         </div>
-        <div class="home__rooms">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+        <div class="home">
+          <img src="/src/img/house-6.jpeg" alt="House 6" class="home__img" />
+          <svg class="home__like">
+            <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <p>6 rooms</p>
+          <h5 class="home__name">Modern Family Apartment</h5>
+          <div class="home__location">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
+            </svg>
+            <p>Italy</p>
+          </div>
+          <div class="home__rooms">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
+            </svg>
+            <p>3 rooms</p>
+          </div>
+          <div class="home__area">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-expand" />
+            </svg>
+            <p>180 m <sup>2</sup></p>
+          </div>
+          <div class="home__price">
+            <svg>
+              <use xlink:href="/src/img/sprite.svg#icon-key" />
+            </svg>
+            <p>$600,000</p>
+          </div>
+          <button class="btn home__btn">Contact realtor</button>
         </div>
-        <div class="home__area">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-expand" />
-          </svg>
-          <p>450 m <sup>2</sup></p>
-        </div>
-        <div class="home__price">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-key" />
-          </svg>
-          <p>$2,750,000</p>
-        </div>
-        <button class="btn home__btn">Contact realtor</button>
-      </div>
-      <div class="home">
-        <img src="/src/img/house-3.jpeg" alt="House 3" class="home__img" />
-        <svg class="home__like">
-          <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
-        </svg>
-        <h5 class="home__name">Cozy Country House</h5>
-        <div class="home__location">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
-          </svg>
-          <p>UK</p>
-        </div>
-        <div class="home__rooms">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
-          </svg>
-          <p>4 rooms</p>
-        </div>
-        <div class="home__area">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-expand" />
-          </svg>
-          <p>250 m <sup>2</sup></p>
-        </div>
-        <div class="home__price">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-key" />
-          </svg>
-          <p>$850,000</p>
-        </div>
-        <button class="btn home__btn">Contact realtor</button>
-      </div>
-      <div class="home">
-        <img src="/src/img/house-4.jpeg" alt="House 4" class="home__img" />
-        <svg class="home__like">
-          <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
-        </svg>
-        <h5 class="home__name">Large Rustical Villa</h5>
-        <div class="home__location">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
-          </svg>
-          <p>Portugal</p>
-        </div>
-        <div class="home__rooms">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
-          </svg>
-          <p>6 rooms</p>
-        </div>
-        <div class="home__area">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-expand" />
-          </svg>
-          <p>480 m <sup>2</sup></p>
-        </div>
-        <div class="home__price">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-key" />
-          </svg>
-          <p>$1,950,000</p>
-        </div>
-        <button class="btn home__btn">Contact realtor</button>
-      </div>
-      <div class="home">
-        <img src="/src/img/house-5.jpeg" alt="House 5" class="home__img" />
-        <svg class="home__like">
-          <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
-        </svg>
-        <h5 class="home__name">Majestic Palace House</h5>
-        <div class="home__location">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
-          </svg>
-          <p>Germany</p>
-        </div>
-        <div class="home__rooms">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
-          </svg>
-          <p>18 rooms</p>
-        </div>
-        <div class="home__area">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-expand" />
-          </svg>
-          <p>4230 m <sup>2</sup></p>
-        </div>
-        <div class="home__price">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-key" />
-          </svg>
-          <p>$9,500,000</p>
-        </div>
-        <button class="btn home__btn">Contact realtor</button>
-      </div>
-      <div class="home">
-        <img src="/src/img/house-6.jpeg" alt="House 6" class="home__img" />
-        <svg class="home__like">
-          <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
-        </svg>
-        <h5 class="home__name">Modern Family Apartment</h5>
-        <div class="home__location">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
-          </svg>
-          <p>Italy</p>
-        </div>
-        <div class="home__rooms">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-profile-male" />
-          </svg>
-          <p>3 rooms</p>
-        </div>
-        <div class="home__area">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-expand" />
-          </svg>
-          <p>180 m <sup>2</sup></p>
-        </div>
-        <div class="home__price">
-          <svg>
-            <use xlink:href="/src/img/sprite.svg#icon-key" />
-          </svg>
-          <p>$600,000</p>
-        </div>
-        <button class="btn home__btn">Contact realtor</button>
       </div>
     </section>
     <section class="gallery">

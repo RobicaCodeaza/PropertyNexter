@@ -13,3 +13,7 @@
 .mb-hg {
   margin-bottom: 12rem;
 }
+.aligned-title {
+  grid-column: center-start/center-end;
+  text-align: center;
+}

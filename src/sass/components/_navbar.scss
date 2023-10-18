@@ -41,7 +41,7 @@
     transform: translateY(+0.8rem);
   }
 
-  @media only screen and (max-width: $bp-large) {
+  @include respond(tab-land) {
     &::before {
       transform: translateY(-0.8rem);
     }
