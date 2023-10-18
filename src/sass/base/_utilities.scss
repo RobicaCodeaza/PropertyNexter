@@ -17,3 +17,7 @@
   grid-column: center-start/center-end;
   text-align: center;
 }
+
+.home-active {
+  grid-column: 1 / span 3;
+}

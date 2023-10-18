@@ -5,11 +5,11 @@
   grid-column: center-start/center-end;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-rows: repeat(auto-fit, 45rem);
   grid-gap: 7rem;
 }
 
 .home {
-  // position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 3.5rem;
@@ -18,37 +18,40 @@
   overflow: hidden;
   border-radius: 1rem;
   transition: all 0.2s;
+  position: relative;
 
   &:hover {
-    transform: translateY(-0.5rem);
+    transform: translateY(-0.25rem);
     & .home-name-btn {
       width: 75%;
-      outline: 3px solid $color-primary;
-      box-shadow: 0 0.5rem 1rem 0 $color-secondary;
-    }
+      outline: 2px solid hsl(0, 78%, 62%);
 
-    // & .home__overlay {
-    //   pointer-events: auto;
-    //   visibility: visible;
-    //   opacity: 1;
-    // }
+      &__icon {
+        margin-left: 2.5rem;
+        fill: #ea5353;
+      }
+    }
+    & .home__overlay {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 
-  // &__overlay {
-  //   background-image: linear-gradient(
-  //     rgba($color-secondary, 0.75),
-  //     rgba($color-secondary, 0.75)
-  //   );
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   height: 100%;
-  //   width: 100%;
-
-  //   pointer-events: none;
-  //   visibility: hiddens;
-  //   opacity: 0;
-  // }
+  &__overlay {
+    background-image: linear-gradient(
+      rgba($color-secondary, 0.65),
+      rgba($color-secondary, 0.65)
+    );
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+  }
   &__img {
     width: 100%;
     grid-row: 1/2;
@@ -97,11 +100,6 @@
       margin-left: 1.2rem;
       transition: all 0.2s;
     }
-    // &:hover {
-    //   & .home-name-btn__icon {
-    //     // margin-left: 2.5rem;
-    //   }
-    // }
   }
 
   &__location,
