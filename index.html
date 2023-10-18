@@ -16,6 +16,15 @@
       href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i"
       rel="stylesheet"
     />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      module
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
     <link rel="stylesheet" href="./src/sass/style.scss" />
 
     <title>RealProperty &mdash; your home, your freedom</title>
@@ -186,13 +195,24 @@
       </div>
     </section>
     <section class="section section--homes">
+      <h2 class="heading-2 aligned-title mb-sm">Our Properties</h2>
+      <h3 class="heading-3 aligned-title mb-hg">
+        Take a look and compare what you see to our promise.
+      </h3>
       <div class="homes-content">
         <div class="home">
+          <!-- <div class="home__overlay"></div> -->
           <img src="/src/img/house-1.jpeg" alt="House 1" class="home__img" />
           <svg class="home__like">
             <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <h5 class="home__name">Beautiful family house</h5>
+          <button class="home-name-btn">
+            Beautiful family house
+            <ion-icon
+              class="home-name-btn__icon"
+              name="caret-forward-outline"
+            ></ion-icon>
+          </button>
           <div class="home__location">
             <svg>
               <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
@@ -224,7 +244,7 @@
           <svg class="home__like">
             <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <h5 class="home__name">Modern Glass Villa</h5>
+          <button class="home-name-btn">Modern Glass Villa</button>
           <div class="home__location">
             <svg>
               <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
@@ -256,7 +276,7 @@
           <svg class="home__like">
             <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <h5 class="home__name">Cozy Country House</h5>
+          <button class="home-name-btn">Cozy Country House</button>
           <div class="home__location">
             <svg>
               <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
@@ -288,7 +308,7 @@
           <svg class="home__like">
             <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <h5 class="home__name">Large Rustical Villa</h5>
+          <button class="home-name-btn">Large Rustical Villa</button>
           <div class="home__location">
             <svg>
               <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
@@ -320,7 +340,7 @@
           <svg class="home__like">
             <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <h5 class="home__name">Majestic Palace House</h5>
+          <button class="home-name-btn">Majestic Palace House</button>
           <div class="home__location">
             <svg>
               <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
@@ -352,7 +372,7 @@
           <svg class="home__like">
             <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
           </svg>
-          <h5 class="home__name">Modern Family Apartment</h5>
+          <button class="home-name-btn">Modern Family Apartment</button>
           <div class="home__location">
             <svg>
               <use xlink:href="/src/img/sprite.svg#icon-map-pin" />
