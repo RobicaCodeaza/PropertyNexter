@@ -3,7 +3,7 @@
 .homes-content {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(25rem, 45rem));
   // grid-auto-flow: row 45rem;
   grid-gap: 7rem;
@@ -17,6 +17,7 @@
 
 .home {
   display: flex;
+  transition: all 0.2s;
 
   @media only screen and (max-width: 700px) {
     flex-direction: column;
@@ -30,27 +31,28 @@
 
     background-color: $color-grey-light-1;
     overflow: hidden;
-    border-radius: 0.5rem;
     transition: all 0.2s;
     position: relative;
   }
 
   &__details {
     // flex: 1;
+    background-color: $color-grey-light-1;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    padding: 3rem 6rem;
   }
   &:hover {
-    .home__preview {
-      transform: translateY(-0.25rem);
-    }
-    & .home-name-btn {
+    transform: translateY(-0.5rem);
+    .home-name-btn {
       outline: 2px solid hsl(0, 78%, 62%);
 
       &__icon {
-        margin-left: 2.5rem;
-        fill: #ea5353;
+        margin-left: 2rem;
+        stroke: #ea5353;
       }
     }
-    & .home__overlay {
+    .home__overlay {
       visibility: visible;
       opacity: 1;
       pointer-events: auto;
@@ -96,7 +98,7 @@
     justify-self: center;
     transform: translateY(50%);
     align-self: end;
-    width: 70%;
+    width: 75%;
 
     display: flex;
     align-items: center;
@@ -116,8 +118,7 @@
     &__icon {
       height: 2.5rem;
       width: 2.5rem;
-      color: #fff;
-      fill: #fff;
+      stroke: #fff;
       margin-left: 1.2rem;
       transition: all 0.2s;
     }
@@ -147,7 +148,11 @@
 
   &__btn {
     grid-column: 1/-1;
-    // transform: translateY(-0.1rem);
+    border-radius: 0 !important;
     z-index: 1;
   }
+}
+
+.rotated.home-name-btn__icon {
+  transform: rotate(180deg);
 }

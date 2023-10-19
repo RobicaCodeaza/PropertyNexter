@@ -25,6 +25,3 @@ $bp-medium: 50em; //800px
 $bp-small: 37.5em; //600px
 
 $homes-grid-columns: 3;
-@include respond(tab-land) {
-  $homes-grid-columns: 2 !important;
-}
