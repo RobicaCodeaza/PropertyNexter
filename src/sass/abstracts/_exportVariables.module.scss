@@ -1,0 +1,5 @@
+@use '../abstracts/variables' as *;
+
+:export {
+  homesGridColumns: $homes-grid-columns;
+}

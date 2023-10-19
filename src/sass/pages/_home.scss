@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-rows:
-    5rem calc(100dvh - 5rem) min-content minmax(40vw, 100dvh)
+    5rem calc(100dvh - 5rem) min-content 40vw
     min-content minmax(min-content, 100dvh) min-content;
   grid-template-columns:
     [ full-start] minmax(6rem, 1fr)
@@ -37,6 +37,8 @@
   background-color: hsl(0, 0%, 98%);
   &--features {
     padding: 10rem 0 15rem 0;
+  }
+  &--story {
   }
   &--homes {
     padding: 10rem 0 15rem 0;
