@@ -40,6 +40,8 @@ const previewHome = function (e) {
     if (otherHome !== home) {
       otherHome.style.setProperty('grid-row', 'auto');
       const homeDetails = otherHome.querySelector('.home__details');
+      const btnIcon = otherHome.querySelector('.home-name-btn__icon');
+      btnIcon.classList.remove('rotated');
       otherHome.classList.remove('home-active');
       homeDetails.classList.add('display-none');
     }

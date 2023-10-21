@@ -45,11 +45,11 @@
   &:hover {
     transform: translateY(-0.5rem);
     .home-name-btn {
-      outline: 2px solid hsl(0, 78%, 62%);
+      outline: 2px solid hsl(180, 62%, 55%);
 
       &__icon {
         margin-left: 2rem;
-        stroke: #ea5353;
+        stroke: hsl(180, 62%, 55%);
       }
     }
     .home__overlay {
