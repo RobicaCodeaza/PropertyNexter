@@ -9,6 +9,9 @@
   display: flex;
   flex-wrap: wrap;
 
+  @include respond(tab-port) {
+    padding: 3rem 1.5rem;
+  }
   &__item {
     margin-bottom: 0.7rem;
     flex: 0 0 50%;

@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-rows:
-    5rem calc(100dvh - 5rem) min-content 40vw
+    5rem calc(100dvh - 5rem) min-content 50vw
     min-content minmax(min-content, 100dvh) min-content;
   grid-template-columns:
     [ full-start] minmax(6rem, 1fr)
@@ -36,12 +36,32 @@
   // grid-template-rows: min-content;
   background-color: hsl(0, 0%, 98%);
   &--features {
+    align-content: center;
     padding: 10rem 0 15rem 0;
   }
   &--story {
   }
+  &--testimonials {
+    padding: 20rem 0;
+    position: relative;
+    background-color: $color-grey;
+
+    &__background {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      background-image: linear-gradient(
+          rgba($color-primary, 0.25),
+          rgba($color-secondary, 0.75)
+        ),
+        url(/src//img/back1.jpg);
+      background-size: cover;
+    }
+  }
   &--homes {
     background-color: $color-grey;
-    padding: 10rem 0 15rem 0;
+    padding: 20rem 0;
   }
 }

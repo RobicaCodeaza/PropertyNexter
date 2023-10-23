@@ -9,6 +9,12 @@
       grid-template-rows: repeat(4, minmax(15rem, 22.5rem));
       justify-content: center;
       gap: 6rem;
+
+      @include respond(tab-port) {
+        grid-template-columns: repeat(8, minmax(3rem, 6rem));
+        grid-template-rows: repeat(7, minmax(15rem, 1fr));
+        gap: 4rem;
+      }
     }
   }
 }
@@ -18,6 +24,7 @@
   width: 33.33%;
   margin-bottom: 6rem;
   transition: all 0.2s;
+  border-radius: 0.5rem;
 
   @supports (display: grid) {
     width: auto;
@@ -28,8 +35,8 @@
   flex-direction: column;
   background-color: #fff;
   padding: 2.4rem;
-  border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.199);
+  border: 0.2rem solid $color-grey;
 
   &__icon {
     height: 4.5rem;
@@ -63,6 +70,9 @@
     font-size: 1.7rem;
     line-height: 1.5;
     // grid-column: 2/3;
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+    }
   }
 
   &:hover {
@@ -70,41 +80,62 @@
   }
 
   &--luxury {
-    border-top: 0.5rem solid hsl(34, 97%, 64%);
+    // border-top: 0.35rem solid hsl(34, 97%, 64%);
 
     &:hover {
-      box-shadow: 0 1rem 2rem 0 hsl(34, 97%, 64%);
+      box-shadow: 0 0.5rem 1rem 0 hsl(34, 97%, 64%);
+    }
+
+    @include respond(tab-port) {
+      grid-column: 1 / span 4;
     }
   }
   &--best {
-    border-top: 0.5rem solid hsl(212, 86%, 64%);
+    // border-top: 0.35rem solid hsl(212, 86%, 64%);
 
     &:hover {
-      box-shadow: 0 1rem 2rem 0 hsl(212, 86%, 64%);
+      box-shadow: 0 0.5rem 1rem 0 hsl(212, 86%, 64%);
+    }
+
+    @include respond(tab-port) {
+      grid-column: 5 / span 4;
     }
   }
   &--location {
-    border-top: 0.5rem solid hsl(180, 62%, 55%);
+    // border-top: 0.35rem solid hsl(180, 62%, 55%);
     &:hover {
-      box-shadow: 0 1rem 2rem 0 hsl(180, 62%, 55%);
+      box-shadow: 0 0.5rem 1rem 0 hsl(180, 62%, 55%);
+    }
+    @include respond(tab-port) {
+      grid-column: 1 / span 4;
     }
   }
   &--home {
-    border-top: 0.5rem solid hsl(234, 12%, 34%);
+    // border-top: 0.35rem solid hsl(234, 12%, 34%);
     &:hover {
-      box-shadow: 0 1rem 2rem 0 hsl(234, 12%, 34%);
+      box-shadow: 0 0.5rem 1rem 0 hsl(234, 12%, 34%);
+    }
+    @include respond(tab-port) {
+      grid-column: 5 / span 4;
     }
   }
   &--realtors {
-    border-top: 0.5rem solid hsl(0, 78%, 62%);
+    // border-top: 0.35rem solid hsl(0, 78%, 62%);
+
     &:hover {
-      box-shadow: 0 1rem 2rem 0 hsl(0, 78%, 62%);
+      box-shadow: 0 0.5rem 1rem 0 hsl(0, 78%, 62%);
+    }
+    @include respond(tab-port) {
+      grid-column: 1 / span 4;
     }
   }
   &--secure {
-    border-top: 0.5rem solid hsl(229, 6%, 66%);
+    // border-top: 0.35rem solid hsl(229, 6%, 66%);
     &:hover {
-      box-shadow: 0 1rem 2rem 0 hsl(229, 6%, 66%);
+      box-shadow: 0 0.5rem 1rem 0 hsl(229, 6%, 66%);
+    }
+    @include respond(tab-port) {
+      grid-column: 5 / span 4;
     }
   }
 }
@@ -114,7 +145,7 @@
   width: 100%;
 
   &--1 {
-    border-radius: 20% 50% 0 50%;
+    border-radius: 10% 25% 0 25%;
     background-image: url(/src/img/location.jpg);
     background-size: cover;
     grid-row: 1 / span 2;
@@ -127,12 +158,18 @@
         ),
         url(/src/img/location.jpg);
     }
+
+    @include respond(tab-port) {
+      grid-column: 1 / span 8;
+      grid-row: 1 / span 1;
+    }
   }
   &--2 {
-    border-radius: 15% 35% 0 35%;
+    border-radius: 7.5% 17.5% 0 17.5%;
     background-image: url(/src/img/key.jpg);
     background-size: cover;
-    grid-row: 1/2;
+    background-position: top;
+    grid-row: 1 / span 1;
 
     &:hover {
       background-image: linear-gradient(
@@ -142,9 +179,14 @@
         ),
         url(/src/img/key.jpg);
     }
+
+    @include respond(tab-port) {
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 8;
+    }
   }
   &--3 {
-    border-radius: 35% 15% 35% 0;
+    border-radius: 17.5% 7.5% 17.5% 0;
     background-image: url(/src/img/pay.jpg);
     background-size: cover;
     background-position: bottom;
@@ -159,10 +201,14 @@
         ),
         url(/src/img/pay.jpg);
     }
+    @include respond(tab-port) {
+      grid-row: 5 / span 1;
+      grid-column: 1 / span 8;
+    }
   }
 
   &--4 {
-    border-radius: 20% 40% 80% 0;
+    border-radius: 10% 20% 40% 0;
 
     background-image: url(/src/img/original_realtor.jpg);
     background-size: cover;
@@ -176,6 +222,10 @@
           rgba($color-secondary, 0.5)
         ),
         url(/src/img/original_realtor.jpg);
+    }
+    @include respond(tab-port) {
+      grid-row: 7 / span 1;
+      grid-column: 1 / span 8;
     }
   }
 }
