@@ -8,6 +8,9 @@
 
   display: flex;
   flex-wrap: wrap;
+  @include respond(particular-small-laptop) {
+    padding: 1.5rem 0;
+  }
 
   @include respond(tab-port) {
     padding: 3rem 1.5rem;

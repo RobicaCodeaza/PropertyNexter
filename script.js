@@ -8,8 +8,7 @@ const tabLandMedia = window.matchMedia('(max-width: 75em)');
 const smallLaptopMedia = window.matchMedia('(max-width: 98.5em)');
 const bigDesktopMedia = window.matchMedia('(min-width: 120em)');
 const tabPortBiggerMedia = window.matchMedia('(min-width: 56.25em)');
-const homesMedia = window.matchMedia('(max-width: 800px)');
-const homesMediaBigger = window.matchMedia('(min-width: 800px)');
+const homesMedia = window.matchMedia('(max-width: 1000px)');
 
 const homes = document.querySelector('.homes-content');
 const homeArray = document.querySelectorAll('.home');
@@ -19,7 +18,10 @@ const homeArray = document.querySelectorAll('.home');
 const findDetailsWidth = function (home, homes) {
   let columns = 3;
   const homePreview = home.querySelector('.home__preview');
-  if (tabPortMedia.matches) columns = 2;
+  if (homesMedia.matches) {
+    console.log('matches');
+    columns = 2;
+  }
 
   const homePreviewWidth =
     Number.parseFloat(homePreview.getBoundingClientRect().width, 10) *
@@ -58,21 +60,26 @@ homes.addEventListener('click', previewHome);
 
 const player = document.querySelector('lottie-player');
 
-const loadingLottie = async function () {
+const loadingLottie = async function (player, url) {
   try {
-    await player.load(
-      'https://lottie.host/2c24727f-c0fd-4acd-8d88-3097b9f9a392/zahwGLHCtC.json'
-    );
+    await player.load(`${url}`);
     // player.setAttribute('background', 'red');
+    console.log('Loading', player);
+
     // setTimeout(() => {
     player.setSpeed(2);
+    // player.stop();
     player.play();
     // }, 1000);
   } catch (err) {
     console.log(err);
   }
 };
-loadingLottie();
+loadingLottie(
+  player,
+  'https://lottie.host/2c24727f-c0fd-4acd-8d88-3097b9f9a392/zahwGLHCtC.json'
+);
+
 const sliders = async function () {
   try {
     const testimonials = document.querySelectorAll('.testimonial');
@@ -103,16 +110,12 @@ const sliders = async function () {
     };
 
     const goToSlide = async function (slide) {
-      try {
-        testimonials.forEach(
-          (card, i) =>
-            (card.style.transform = `translateY(${(i - slide) * 100}%)`)
-        );
-        player.stop();
-        player.play();
-      } catch (err) {
-        throw err;
-      }
+      testimonials.forEach(
+        (card, i) =>
+          (card.style.transform = `translateY(${(i - slide) * 100}%)`)
+      );
+      player.stop();
+      player.play();
     };
 
     const nextSlide = function () {
@@ -156,3 +159,35 @@ const sliders = async function () {
 };
 
 sliders();
+
+// Adding smooth scroll from scrollIntoView
+
+const allBtnLinks = document.querySelectorAll('.btn');
+allBtnLinks.forEach((btn) =>
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  })
+);
+
+const detailsContent = document.querySelector('.details__content');
+const detailAll = document.querySelectorAll('.details__content__item');
+detailsContent.addEventListener('click', function (e) {
+  if (!e.target.closest('.details__content__item')) return;
+
+  const detail = e.target.closest('.details__content__item');
+
+  detailAll.forEach((detailDiff) => {
+    if (detail !== detailDiff)
+      detailDiff.classList.remove('details__content__item--active');
+  });
+  detailsContent.scrollTop = detail.clientHeight * detail.dataset.tab - '25';
+  detail.classList.add('details__content__item--active');
+  const player = detail.querySelector('.lottie-animation-details');
+  console.log(player);
+  loadingLottie(player, player.src);
+  // player.stop();
+  // player.play();
+});
+// 027BFF

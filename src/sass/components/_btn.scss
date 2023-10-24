@@ -1,17 +1,22 @@
 @use '../abstracts/' as *;
 
 .btn {
-  background-color: $color-primary;
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  font-family: $font-display;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  padding: 1.8rem 3rem;
-  cursor: pointer;
-  transition: all 0.2s;
-
+  &:link,
+  &:visited {
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: $font-display;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    padding: 1.5rem 2.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
   &:hover {
     background-color: $color-primary-dark;
   }

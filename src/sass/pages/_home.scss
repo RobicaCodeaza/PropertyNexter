@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-rows:
-    5rem calc(100dvh - 5rem) min-content 50vw
+    5rem calc(100dvh - 5rem) min-content 50vw 50vw
     min-content minmax(min-content, 100dvh) min-content;
   grid-template-columns:
     [ full-start] minmax(6rem, 1fr)
@@ -14,7 +14,7 @@
   @include respond(tab-port) {
     grid-template-rows: 6rem calc(100dvh - 6rem) repeat(
         auto-fit,
-        minmax(min-content, 100dvh)
+        minmax(min-content, 50vw)
       );
     // repeat min- content been removed as the size will be calculated in terms of min-content automatically
   }
@@ -58,10 +58,19 @@
         ),
         url(/src//img/back1.jpg);
       background-size: cover;
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+    @include respond(phone) {
+      padding: 15rem 5rem;
     }
   }
   &--homes {
     background-color: $color-grey;
     padding: 20rem 0;
+  }
+  &--details {
+    padding: 15rem 0 20rem 0;
   }
 }

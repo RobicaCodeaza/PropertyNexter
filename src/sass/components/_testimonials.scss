@@ -1,46 +1,38 @@
 @use '../abstracts/' as *;
 
 .testimonials-box {
-  grid-column: col-start 3 / col-end 5;
-  width: 200%;
+  grid-column: col-start 1 / col-end 5;
+  width: 115%;
   justify-self: end;
-
-  overflow: hidden;
-
   position: relative;
   height: 40rem;
   background-color: #fff;
   display: flex;
+  @include respond(particular-small-laptop) {
+    width: 100%;
+  }
+  @include respond(tab-port) {
+    grid-column: col-start 1 / col-end 6;
+  }
+  @include respond(phone) {
+    grid-column: full-start / full-end;
+  }
   &::after,
   &::before {
     content: '';
     position: absolute;
-    // opacity: 0.3;
   }
-  // &::before {
-  //   top: 0;
-  //   right: 0;
-  //   height: 30rem;
-  //   width: 30rem;
-  //   border-radius: 10rem;
-  //   background-image: linear-gradient(#283441, #404a56);
-  //   transform: translate(50%, -50%);
-  // }
-  // &::after {
-  //   bottom: 0;
-  //   left: 0;
-  //   height: 30rem;
-  //   width: 30rem;
-  //   border-radius: 10rem;
-  //   background-color: hsl(212, 86%, 64%);
-  //   transform: translate(-50%, 50%);
-  // }
 
+  &__slider {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow-y: hidden;
+  }
   &__sidebar {
     width: 6rem;
     height: 100%;
     background-color: #90341d;
-    z-index: 2;
     padding: 1.5rem 0;
     display: flex;
     flex-direction: column;
@@ -72,27 +64,35 @@
       }
     }
   }
-
-  &__slider {
-    flex: 1;
-    height: 100%;
-    position: relative;
-  }
 }
 
 .testimonial {
   width: 100%;
-  height: 100%;
+  height: 105%;
   position: absolute;
   background-color: $color-secondary;
   padding: 6.5rem;
   line-height: 2.2rem;
   transition: all 0.5s;
 
+  @include respond(tab-land) {
+    padding: 5rem 4.5rem;
+  }
+  @include respond(tab-port) {
+    padding: 3.5rem 4.5rem;
+  }
+
   &__profile {
     display: flex;
     align-items: center;
     margin-bottom: 4rem;
+    @include respond(tab-land) {
+      margin-bottom: 3rem;
+    }
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
     &__img {
       width: 8rem;
       height: 8rem;
@@ -128,6 +128,10 @@
     height: 10rem;
     border-bottom-right-radius: 100%;
     background-color: #90341d;
+    @include respond(tab-land) {
+      width: 7.5rem;
+      height: 7.5rem;
+    }
   }
 
   &__paragraph {
@@ -146,6 +150,10 @@
   width: 6rem;
   height: 6rem;
   z-index: 1;
+  @include respond(tab-land) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
 }
 
 .dots {
@@ -153,7 +161,7 @@
   left: 0;
   top: 50%;
   transform: translate(-200%, -50%);
-  z-index: 9;
+  // z-index: 9;
   display: flex;
   flex-direction: column;
   &__dot {

@@ -46,7 +46,7 @@ body {
   }
   &--testimonials {
     color: $color-grey-light-1;
-    grid-column: col-start 5 / full-end;
+    grid-column: col-start 1 / col-end 8;
     text-align: center;
   }
 }

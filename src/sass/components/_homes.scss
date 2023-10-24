@@ -3,15 +3,25 @@
 .homes-content {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(25rem, 45rem));
+  grid-template-columns: repeat(3, minmax(20rem, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(25rem, 42.5rem));
+  // padding: 0 15rem;
   // grid-auto-flow: row 45rem;
-  grid-gap: 7rem;
+  justify-content: center;
+  grid-gap: 6rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, minmax(25rem, 42.5rem));
+    padding: 0 5rem;
+  }
 
   @media only screen and (max-width: 700px) {
     display: flex;
     flex-direction: column;
-    padding: 0 10rem;
+    padding: 0 15rem;
+  }
+  @include respond(phone) {
+    padding: 0 5rem;
   }
 }
 
@@ -44,14 +54,17 @@
     letter-spacing: 0.5px;
     padding: 3rem 6rem;
     overflow-y: scroll;
-    @include respond(tab-port) {
+    @include respond(particular-small-laptop) {
       padding: 3rem;
+    }
+    @include respond(tab-port) {
     }
   }
   &:hover {
     transform: translateY(-0.5rem);
     .home-name-btn {
       outline: 2px solid hsl(180, 62%, 55%);
+      width: 85%;
 
       &__icon {
         margin-left: 2rem;
