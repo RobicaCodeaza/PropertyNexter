@@ -3,6 +3,7 @@
 .btn {
   &:link,
   &:visited {
+    display: block;
     background-color: $color-primary;
     color: #fff;
     border: none;

@@ -39,7 +39,7 @@
       margin-right: 5rem;
     }
     @include respond(phone) {
-      width: 50%;
+      width: 75%;
       margin-right: 0;
       margin-bottom: 5rem;
 
@@ -49,14 +49,18 @@
     }
   }
   &__content {
+    position: relative;
+
     list-style: none;
     max-width: 65rem;
-    height: 40rem;
+    height: 50rem;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     padding: 1.2rem;
     overflow-y: scroll;
+    border: 3px solid $color-grey-light-1;
+    border-radius: 1.5rem;
     transition: all 5s;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -79,6 +83,10 @@
       // border: 1px solid $color-primary;
       opacity: 0.3;
       transition: all 0.5s;
+
+      // &[data-tab='1'] {
+      //   animation: 2s linear pulsate infinite;
+      // }
 
       &::after {
         display: block;
@@ -120,8 +128,9 @@
           color: #0e1a28;
         }
       }
+
       @include respond(tab-port) {
-        min-height: 30rem;
+        height: auto;
         flex-direction: column;
       }
       @include respond(phone) {
@@ -129,7 +138,7 @@
       }
     }
     @include respond(tab-port) {
-      height: 55rem;
+      height: 60rem;
     }
   }
   @include respond(tab-port) {
@@ -151,4 +160,13 @@
     height: 10rem;
     width: 22rem;
   }
+}
+
+.lottie-animation-details-cursor {
+  position: absolute;
+  width: 30rem;
+  height: 25rem;
+  z-index: 1;
+  top: 0;
+  left: 50%;
 }

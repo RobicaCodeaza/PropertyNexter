@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-rows:
-    5rem calc(100dvh - 5rem) min-content 50vw 50vw
+    5rem calc(100dvh - 5rem) min-content 50vw 100vh
     min-content minmax(min-content, 100dvh) min-content;
   grid-template-columns:
     [ full-start] minmax(6rem, 1fr)

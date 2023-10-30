@@ -2,13 +2,13 @@
 
 .story {
   &__pictures {
-    height: 50vw;
+    // height: 50vw;
     background-color: $color-primary;
     background-image: linear-gradient(
         rgba($color-primary, 0.25),
         rgba($color-secondary, 0.75)
       ),
-      url(/src//img/back1.jpg);
+      url(/src//img/back1.webp);
     background-size: cover;
     grid-column: full-start/col-end 4;
 
@@ -20,6 +20,7 @@
     @include respond(tab-port) {
       grid-column: 1/-1;
       padding: 3rem;
+      // height: 70vw;
     }
   }
   &__img--1 {

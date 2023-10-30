@@ -47,22 +47,22 @@
     // transform: translateY(-1rem);
 
     &--luxury {
-      fill: hsl(34, 97%, 64%);
+      fill: #fcaf4a;
     }
     &--best {
-      fill: hsl(212, 86%, 64%);
+      fill: #549ef2;
     }
     &--location {
-      fill: hsl(180, 62%, 55%);
+      fill: #45d3d3;
     }
     &--home {
-      fill: hsl(234, 12%, 34%);
+      fill: #4c4e61;
     }
     &--realtors {
-      fill: hsl(0, 78%, 62%);
+      fill: #ea5353;
     }
     &--secure {
-      fill: hsl(229, 6%, 66%);
+      fill: #a3a5ae;
     }
   }
 
@@ -146,7 +146,7 @@
 
   &--1 {
     border-radius: 10% 25% 0 25%;
-    background-image: url(/src/img/location.jpg);
+    background-image: url(/src/img/location.webp);
     background-size: cover;
     grid-row: 1 / span 2;
 
@@ -156,7 +156,7 @@
           rgba($color-primary, 0.5),
           rgba($color-secondary, 0.5)
         ),
-        url(/src/img/location.jpg);
+        url(/src/img/location.webp);
     }
 
     @include respond(tab-port) {
@@ -166,7 +166,7 @@
   }
   &--2 {
     border-radius: 7.5% 17.5% 0 17.5%;
-    background-image: url(/src/img/key.jpg);
+    background-image: url(/src/img/key.webp);
     background-size: cover;
     background-position: top;
     grid-row: 1 / span 1;
@@ -177,7 +177,7 @@
           rgba($color-primary, 0.5),
           rgba($color-secondary, 0.5)
         ),
-        url(/src/img/key.jpg);
+        url(/src/img/key.webp);
     }
 
     @include respond(tab-port) {
@@ -187,7 +187,7 @@
   }
   &--3 {
     border-radius: 17.5% 7.5% 17.5% 0;
-    background-image: url(/src/img/pay.jpg);
+    background-image: url(/src/img/pay.webp);
     background-size: cover;
     background-position: bottom;
     grid-row: 4/5;
@@ -199,7 +199,7 @@
           rgba($color-primary, 0.5),
           rgba($color-secondary, 0.5)
         ),
-        url(/src/img/pay.jpg);
+        url(/src/img/pay.webp);
     }
     @include respond(tab-port) {
       grid-row: 5 / span 1;
@@ -210,7 +210,7 @@
   &--4 {
     border-radius: 10% 20% 40% 0;
 
-    background-image: url(/src/img/original_realtor.jpg);
+    background-image: url(/src/img/original_realtor.webp);
     background-size: cover;
     background-position: center;
     grid-row: 3 / span 2;
@@ -221,7 +221,7 @@
           rgba($color-primary, 0.5),
           rgba($color-secondary, 0.5)
         ),
-        url(/src/img/original_realtor.jpg);
+        url(/src/img/original_realtor.webp);
     }
     @include respond(tab-port) {
       grid-row: 7 / span 1;

@@ -18,7 +18,7 @@
     />
     <script src="/node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
     <link rel="stylesheet" href="./src/sass/style.scss" />
-    <script type="module" defer src="script.js"></script>
+    <script type="module" defer src="homepage.js"></script>
     <title>RealProperty &mdash; your home, your freedom</title>
   </head>
   <body class="container">
@@ -39,17 +39,17 @@
         >
         <div class="header__hero__seenon-text">As seen on</div>
         <div class="header__hero__seenon-logos">
-          <img src="/src/img/logo-bbc.png" alt="Logo Bbc" />
-          <img src="/src/img/logo-forbes.png" alt="Logo forbes" />
-          <img src="/src/img/logo-techcrunch.png" alt="Logo techcrunch" />
-          <img src="/src/img/logo-bi.png" alt="Logo bi" />
+          <img src="/src/img/logo-bbc.webp" alt="Logo Bbc" />
+          <img src="/src/img/logo-forbes.webp" alt="Logo forbes" />
+          <img src="/src/img/logo-techcrunch.webp" alt="Logo techcrunch" />
+          <img src="/src/img/logo-bi.webp" alt="Logo bi" />
         </div>
       </div>
       <div class="header__realtors">
         <h3 class="heading-3">Top 3 realtors</h3>
         <div class="header__realtors__list">
           <img
-            src="/src/img/realtor-1.jpeg"
+            src="/src/img/realtor-1.webp"
             alt="Realtor img"
             class="header__realtors__img"
           />
@@ -59,7 +59,7 @@
           </div>
 
           <img
-            src="/src/img/realtor-2.jpeg"
+            src="/src/img/realtor-2.webp"
             alt="Realtor img"
             class="header__realtors__img"
           />
@@ -69,7 +69,7 @@
           </div>
 
           <img
-            src="/src/img/realtor-3.jpeg"
+            src="/src/img/realtor-3.webp"
             alt="Realtor img"
             class="header__realtors__img"
           />
@@ -165,12 +165,12 @@
     <section class="section section--story">
       <div class="story__pictures">
         <img
-          src="/src//img/story-1.jpg"
+          src="/src//img/story-1.webp"
           alt="Couple with new house"
           class="story__img--1"
         />
         <img
-          src="/src//img/story-2.jpeg"
+          src="/src//img/story-2.webp"
           alt=" new house"
           class="story__img--2"
         />
@@ -195,12 +195,16 @@
       <div class="section--testimonials__background"></div>
       <div class="testimonials-box">
         <div class="testimonials-box__slider">
-          <lottie-player class="lottie-animation" value="1" mode="normal">
+          <lottie-player
+            class="lottie-animation-testimonials"
+            mode="normal"
+            src="https://lottie.host/2c24727f-c0fd-4acd-8d88-3097b9f9a392/zahwGLHCtC.json"
+          >
           </lottie-player>
           <div class="testimonial">
             <div class="testimonial__profile">
               <img
-                src="/src/img/test-1.jpg"
+                src="/src/img/test-1.webp"
                 class="testimonial__profile__img"
                 alt="Picture 1 of testimonial"
               />
@@ -223,7 +227,7 @@
           <div class="testimonial">
             <div class="testimonial__profile">
               <img
-                src="/src/img/test-2.jpg"
+                src="/src/img/test-2.webp"
                 class="testimonial__profile__img"
                 alt="Picture 1 of testimonial"
               />
@@ -248,7 +252,7 @@
           <div class="testimonial">
             <div class="testimonial__profile">
               <img
-                src="/src/img/test-3.jpg"
+                src="/src/img/test-3.webp"
                 class="testimonial__profile__img"
                 alt="Picture 1 of testimonial"
               />
@@ -271,7 +275,7 @@
           <div class="testimonial">
             <div class="testimonial__profile">
               <img
-                src="/src/img/test-4.jpg"
+                src="/src/img/test-4.webp"
                 class="testimonial__profile__img"
                 alt="Picture 1 of testimonial"
               />
@@ -340,7 +344,7 @@
         <div class="home">
           <div class="home__preview">
             <div class="home__overlay"></div>
-            <img src="/src/img/house-1.jpeg" alt="House 1" class="home__img" />
+            <img src="/src/img/house-1.webp" alt="House 1" class="home__img" />
             <svg class="home__like">
               <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
             </svg>
@@ -386,7 +390,9 @@
               </svg>
               <p>$1,200,000</p>
             </div>
-            <a class="btn home__btn" href="#section--cta">Contact realtor</a>
+            <a class="btn home__btn" href="contact.html" target="_blank">
+              Contact realtor
+            </a>
           </div>
           <div class="home__details display-none">
             <p class="paragraph">
@@ -416,7 +422,7 @@
         <div class="home">
           <div class="home__preview">
             <div class="home__overlay"></div>
-            <img src="/src/img/house-2.jpeg" alt="House 2" class="home__img" />
+            <img src="/src/img/house-2.webp" alt="House 2" class="home__img" />
             <svg class="home__like">
               <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
             </svg>
@@ -462,7 +468,7 @@
               </svg>
               <p>$2,750,000</p>
             </div>
-            <a class="btn home__btn" href="#section--cta"> Contact realtor </a>
+            <a class="btn home__btn" href="contact.html"> Contact realtor </a>
           </div>
           <div class="home__details display-none">
             <p class="paragraph">
@@ -492,7 +498,7 @@
         <div class="home">
           <div class="home__preview">
             <div class="home__overlay"></div>
-            <img src="/src/img/house-3.jpeg" alt="House 3" class="home__img" />
+            <img src="/src/img/house-3.webp" alt="House 3" class="home__img" />
             <svg class="home__like">
               <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
             </svg>
@@ -538,7 +544,7 @@
               </svg>
               <p>$850,000</p>
             </div>
-            <a class="btn home__btn" href="#section--cta">Contact realtor</a>
+            <a class="btn home__btn" href="contact.html">Contact realtor</a>
           </div>
           <div class="home__details display-none">
             <p class="paragraph">
@@ -568,7 +574,7 @@
         <div class="home">
           <div class="home__preview">
             <div class="home__overlay"></div>
-            <img src="/src/img/house-4.jpeg" alt="House 4" class="home__img" />
+            <img src="/src/img/house-4.webp" alt="House 4" class="home__img" />
             <svg class="home__like">
               <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
             </svg>
@@ -614,7 +620,7 @@
               </svg>
               <p>$1,950,000</p>
             </div>
-            <a class="btn home__btn" href="#section--cta"> Contact realtor </a>
+            <a class="btn home__btn" href="contact.html"> Contact realtor </a>
           </div>
           <div class="home__details display-none">
             <p class="paragraph">
@@ -644,7 +650,7 @@
         <div class="home">
           <div class="home__preview">
             <div class="home__overlay"></div>
-            <img src="/src/img/house-5.jpeg" alt="House 5" class="home__img" />
+            <img src="/src/img/house-5.webp" alt="House 5" class="home__img" />
             <svg class="home__like">
               <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
             </svg>
@@ -690,7 +696,7 @@
               </svg>
               <p>$9,500,000</p>
             </div>
-            <a class="btn home__btn" href="#section--cta"> Contact realtor </a>
+            <a class="btn home__btn" href="contact.html"> Contact realtor </a>
           </div>
           <div class="home__details display-none">
             <p class="paragraph">
@@ -720,7 +726,7 @@
         <div class="home">
           <div class="home__preview">
             <div class="home__overlay"></div>
-            <img src="/src/img/house-6.jpeg" alt="House 6" class="home__img" />
+            <img src="/src/img/house-6.webp" alt="House 6" class="home__img" />
             <svg class="home__like">
               <use xlink:href="/src/img/sprite.svg#icon-heart-full" />
             </svg>
@@ -766,7 +772,7 @@
               </svg>
               <p>$600,000</p>
             </div>
-            <a class="btn home__btn" href="#section--cta"> Contact realtor </a>
+            <a class="btn home__btn" href="contact.html"> Contact realtor </a>
           </div>
           <div class="home__details display-none">
             <p class="paragraph">
@@ -802,7 +808,10 @@
       </h2>
       <div class="details">
         <div class="details__picture">
-          <img src="/src/img/details-contact.jpg" alt="" />
+          <img
+            src="/src/img/details-contact.webp"
+            alt="Details Contact picture"
+          />
         </div>
         <ul class="details__content">
           <li
@@ -810,8 +819,7 @@
             data-tab="0"
           >
             <lottie-player
-              class="lottie-animation-details lottie-animation-details--contanct"
-              value="1"
+              class="lottie-animation-details"
               mode="normal"
               src="https://lottie.host/605689c1-dab7-415a-8301-cf672e1bb42d/yk8HYJ4s4k.json"
             >
@@ -829,8 +837,18 @@
           </li>
           <li class="details__content__item" data-tab="1">
             <lottie-player
+              srcset="
+              /src/assets/logo-green-small-1x.png 1x,
+              /src/assets/logo-green-small-2x.png 2x
+            "
+              media="(max-width:56.25em)"
+              class="lottie-animation-details-cursor"
+              mode="normal"
+              src="https://lottie.host/936955c4-9e5b-4a73-9961-003c814432e4/v92tHohgJu.json"
+            >
+            </lottie-player>
+            <lottie-player
               class="lottie-animation-details lottie-animation-details--contact"
-              value="1"
               mode="normal"
               src="https://lottie.host/0faaefc2-78f4-4d52-b5a7-0bab171357ff/2JFClPnZqs.json"
             >
@@ -848,7 +866,6 @@
           <li class="details__content__item" data-tab="2">
             <lottie-player
               class="lottie-animation-details lottie-animation-details--contanct"
-              value="1"
               mode="normal"
               src="https://lottie.host/bbaa277b-1f41-4954-ac5d-40c56d14d840/Uk9X1kXsls.json"
             >
@@ -867,7 +884,6 @@
           <li class="details__content__item" data-tab="3">
             <lottie-player
               class="lottie-animation-details lottie-animation-details--contanct"
-              value="1"
               mode="normal"
               src="https://lottie.host/89b5247d-cfd0-45a9-882b-8d53b78d6362/Pk9jz2RzKZ.json"
             >
@@ -886,7 +902,6 @@
           <li class="details__content__item" data-tab="4">
             <lottie-player
               class="lottie-animation-details lottie-animation-details--contanct"
-              value="1"
               mode="normal"
               src="https://lottie.host/3f305ded-c275-483a-af27-e656b63ff45a/IgZcL2aaYx.json"
             >
@@ -908,7 +923,7 @@
     <section class="gallery">
       <figure class="gallery__item gallery__item--1">
         <img
-          src="/src/img/gal-1.jpeg"
+          src="/src/img/gal-1.webp"
           alt="Gallery Image 1"
           class="gallery__img"
         />
@@ -916,7 +931,7 @@
 
       <figure class="gallery__item gallery__item--2">
         <img
-          src="/src/img/gal-2.jpeg"
+          src="/src/img/gal-2.webp"
           alt="Gallery Image 2"
           class="gallery__img"
         />
@@ -924,7 +939,7 @@
 
       <figure class="gallery__item gallery__item--3">
         <img
-          src="/src/img/gal-3.jpeg"
+          src="/src/img/gal-3.webp"
           alt="Gallery Image 3"
           class="gallery__img"
         />
@@ -932,7 +947,7 @@
 
       <figure class="gallery__item gallery__item--4">
         <img
-          src="/src/img/gal-4.jpeg"
+          src="/src/img/gal-4.webp"
           alt="Gallery Image 4"
           class="gallery__img"
         />
@@ -940,7 +955,7 @@
 
       <figure class="gallery__item gallery__item--5">
         <img
-          src="/src/img/gal-5.jpeg"
+          src="/src/img/gal-5.webp"
           alt="Gallery Image 5"
           class="gallery__img"
         />
@@ -948,7 +963,7 @@
 
       <figure class="gallery__item gallery__item--6">
         <img
-          src="/src/img/gal-6.jpeg"
+          src="/src/img/gal-6.webp"
           alt="Gallery Image 6"
           class="gallery__img"
         />
@@ -956,7 +971,7 @@
 
       <figure class="gallery__item gallery__item--6">
         <img
-          src="/src/img/gal-6.jpeg"
+          src="/src/img/gal-6.webp"
           alt="Gallery Image 6"
           class="gallery__img"
         />
@@ -964,7 +979,7 @@
 
       <figure class="gallery__item gallery__item--7">
         <img
-          src="/src/img/gal-7.jpeg"
+          src="/src/img/gal-7.webp"
           alt="Gallery Image 7"
           class="gallery__img"
         />
@@ -972,7 +987,7 @@
 
       <figure class="gallery__item gallery__item--8">
         <img
-          src="/src/img/gal-8.jpeg"
+          src="/src/img/gal-8.webp"
           alt="Gallery Image 8"
           class="gallery__img"
         />
@@ -980,7 +995,7 @@
 
       <figure class="gallery__item gallery__item--9">
         <img
-          src="/src/img/gal-9.jpeg"
+          src="/src/img/gal-9.webp"
           alt="Gallery Image 9"
           class="gallery__img"
         />
@@ -988,7 +1003,7 @@
 
       <figure class="gallery__item gallery__item--10">
         <img
-          src="/src/img/gal-10.jpeg"
+          src="/src/img/gal-10.webp"
           alt="Gallery Image 10"
           class="gallery__img"
         />
@@ -996,21 +1011,21 @@
 
       <figure class="gallery__item gallery__item--11">
         <img
-          src="/src/img/gal-11.jpeg"
+          src="/src/img/gal-11.webp"
           alt="Gallery Image 11"
           class="gallery__img"
         />
       </figure>
       <figure class="gallery__item gallery__item--12">
         <img
-          src="/src/img/gal-12.jpeg"
+          src="/src/img/gal-12.webp"
           alt="Gallery Image 12"
           class="gallery__img"
         />
       </figure>
       <figure class="gallery__item gallery__item--13">
         <img
-          src="/src/img/gal-13.jpeg"
+          src="/src/img/gal-13.webp"
           alt="Gallery Image 13"
           class="gallery__img"
         />
@@ -1018,12 +1033,13 @@
 
       <figure class="gallery__item gallery__item--14">
         <img
-          src="/src/img/gal-14.jpeg"
+          src="/src/img/gal-14.webp"
           alt="Gallery Image 14"
           class="gallery__img"
         />
       </figure>
     </section>
+
     <footer class="footer">
       <ul class="nav">
         <li class="nav__item">

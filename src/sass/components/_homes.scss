@@ -4,21 +4,21 @@
   grid-column: center-start/center-end;
   display: grid;
   grid-template-columns: repeat(3, minmax(20rem, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(25rem, 42.5rem));
+  grid-template-rows: repeat(2, minmax(25rem, 1fr));
   // padding: 0 15rem;
-  // grid-auto-flow: row 45rem;
   justify-content: center;
   grid-gap: 6rem;
 
   @include respond(tab-port) {
-    grid-template-columns: repeat(2, minmax(25rem, 42.5rem));
+    grid-template-columns: repeat(2, minmax(25rem, 1fr));
+    grid-template-rows: repeat(3, minmax(1fr, 50rem));
     padding: 0 5rem;
   }
 
   @media only screen and (max-width: 700px) {
     display: flex;
     flex-direction: column;
-    padding: 0 15rem;
+    padding: 0 10rem;
   }
   @include respond(phone) {
     padding: 0 5rem;
@@ -32,7 +32,6 @@
   overflow: hidden;
   @media only screen and (max-width: 700px) {
     flex-direction: column;
-    // max-height: 60rem;
   }
 
   &__preview {
@@ -45,6 +44,10 @@
     overflow: hidden;
     transition: all 0.2s;
     position: relative;
+    @include respond(tab-port) {
+      grid-row-gap: 2rem;
+      max-height: 55rem;
+    }
   }
 
   &__details {
@@ -58,6 +61,8 @@
       padding: 3rem;
     }
     @include respond(tab-port) {
+      // padding: 1.5rem;
+      max-height: 50rem;
     }
   }
   &:hover {
@@ -159,10 +164,18 @@
       height: 2rem;
       width: 2rem;
     }
+    @include respond(tab-port) {
+      margin-left: 1.5rem;
+      font-size: 1.8rem;
+      justify-content: start;
+    }
   }
   &__location,
   &__rooms {
     margin-top: 2.5rem;
+    @include respond(tab-port) {
+      // margin-top: 1rem;
+    }
   }
 
   &__btn {

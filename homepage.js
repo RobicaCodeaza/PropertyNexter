@@ -8,7 +8,6 @@ const tabLandMedia = window.matchMedia('(max-width: 75em)');
 const smallLaptopMedia = window.matchMedia('(max-width: 98.5em)');
 const bigDesktopMedia = window.matchMedia('(min-width: 120em)');
 const tabPortBiggerMedia = window.matchMedia('(min-width: 56.25em)');
-const homesMedia = window.matchMedia('(max-width: 1000px)');
 
 const homes = document.querySelector('.homes-content');
 const homeArray = document.querySelectorAll('.home');
@@ -18,7 +17,7 @@ const homeArray = document.querySelectorAll('.home');
 const findDetailsWidth = function (home, homes) {
   let columns = 3;
   const homePreview = home.querySelector('.home__preview');
-  if (homesMedia.matches) {
+  if (tabPortMedia.matches) {
     console.log('matches');
     columns = 2;
   }
@@ -58,27 +57,26 @@ homes.addEventListener('click', previewHome);
 
 // -------------------------------------------------------
 
-const player = document.querySelector('lottie-player');
+const quoteAnimationTestimonials = document.querySelector(
+  '.lottie-animation-testimonials'
+);
 
-const loadingLottie = async function (player, url) {
+const loadingLottie = async function (player, url, speed = 2) {
   try {
     await player.load(`${url}`);
     // player.setAttribute('background', 'red');
     console.log('Loading', player);
 
     // setTimeout(() => {
-    player.setSpeed(2);
-    // player.stop();
+    player.setSpeed(speed);
+    player.stop();
     player.play();
     // }, 1000);
   } catch (err) {
     console.log(err);
   }
 };
-loadingLottie(
-  player,
-  'https://lottie.host/2c24727f-c0fd-4acd-8d88-3097b9f9a392/zahwGLHCtC.json'
-);
+loadingLottie(quoteAnimationTestimonials, quoteAnimationTestimonials.src);
 
 const sliders = async function () {
   try {
@@ -114,8 +112,7 @@ const sliders = async function () {
         (card, i) =>
           (card.style.transform = `translateY(${(i - slide) * 100}%)`)
       );
-      player.stop();
-      player.play();
+      loadingLottie(quoteAnimationTestimonials, quoteAnimationTestimonials.src);
     };
 
     const nextSlide = function () {
@@ -161,15 +158,19 @@ const sliders = async function () {
 sliders();
 
 // Adding smooth scroll from scrollIntoView
-
+let houseRealtor;
 const allBtnLinks = document.querySelectorAll('.btn');
-allBtnLinks.forEach((btn) =>
+allBtnLinks.forEach((btn) => {
+  if (btn.classList.contains('home__btn')) {
+    return;
+  }
   btn.addEventListener('click', function (e) {
     e.preventDefault();
+
     const id = e.target.getAttribute('href');
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  })
-);
+  });
+});
 
 const detailsContent = document.querySelector('.details__content');
 const detailAll = document.querySelectorAll('.details__content__item');
@@ -185,9 +186,51 @@ detailsContent.addEventListener('click', function (e) {
   detailsContent.scrollTop = detail.clientHeight * detail.dataset.tab - '25';
   detail.classList.add('details__content__item--active');
   const player = detail.querySelector('.lottie-animation-details');
-  console.log(player);
   loadingLottie(player, player.src);
   // player.stop();
   // player.play();
 });
 // 027BFF
+
+// --------------------
+// OBSERVING DETAILS CONTENT
+
+const detailsContentInView = async function (entries, observer) {
+  try {
+    const [entry] = entries;
+    if (!entry.isIntersecting) {
+      console.log('is not intersecting');
+      return;
+    }
+
+    const detailsItemPulsating = document.querySelector(
+      `.details__content__item[data-tab="1"]`
+    );
+    console.log('is intersecting');
+    detailsItemPulsating.style.animation = '';
+    setTimeout(() => {
+      detailsItemPulsating.style.animation = '1.5s linear pulsate 2';
+    }, 100);
+    const cursorAnimation = document.querySelector(
+      '.lottie-animation-details-cursor'
+    );
+    loadingLottie(cursorAnimation, cursorAnimation.src, 0.65);
+    observer.unobserve(detailsContent);
+  } catch (err) {
+    alert(err);
+  }
+};
+const detailsContentObserverOptions = {
+  root: null,
+  threshold: 1.0,
+};
+
+const detailsContentObserver = new IntersectionObserver(
+  detailsContentInView,
+  detailsContentObserverOptions
+);
+
+detailsContentObserver.observe(detailsContent);
+
+console.log(houseRealtor);
+export default houseRealtor;
