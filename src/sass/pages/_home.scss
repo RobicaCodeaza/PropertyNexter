@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-rows:
-    5rem calc(100dvh - 5rem) min-content 50vw 100vh
+    100dvh min-content 50vw 100vh
     min-content minmax(min-content, 100dvh) min-content;
   grid-template-columns:
     [ full-start] minmax(6rem, 1fr)
@@ -12,10 +12,12 @@
     minmax(6rem, 1fr) [full-end];
 
   @include respond(tab-port) {
-    grid-template-rows: 6rem calc(100dvh - 6rem) repeat(
-        auto-fit,
-        minmax(min-content, 50vw)
-      );
+    grid-template-rows: 120rem repeat(7, minmax(min-content, 50vw));
+    grid-template-columns:
+      [ full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr) [full-end];
     // repeat min- content been removed as the size will be calculated in terms of min-content automatically
   }
 }
@@ -38,6 +40,10 @@
   &--features {
     align-content: center;
     padding: 10rem 0 15rem 0;
+
+    @include respond(phone) {
+      padding: 10rem 0;
+    }
   }
   &--story {
   }
@@ -63,14 +69,21 @@
       }
     }
     @include respond(phone) {
-      padding: 15rem 5rem;
+      padding: 15rem 2rem;
     }
   }
   &--homes {
     background-color: $color-grey;
     padding: 20rem 0;
+    @include respond(phone) {
+      padding: 15rem 0;
+    }
   }
   &--details {
     padding: 15rem 0 20rem 0;
+
+    @include respond(phone) {
+      padding: 15rem 0;
+    }
   }
 }

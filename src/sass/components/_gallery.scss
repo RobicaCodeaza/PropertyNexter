@@ -74,6 +74,9 @@
       grid-row: 6 / -1;
       grid-column: 8/ -1;
     }
+    @include respond(phone) {
+      width: 45%;
+    }
   }
 
   &__img {
@@ -81,5 +84,13 @@
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  @include respond(phone) {
+    height: 38rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }

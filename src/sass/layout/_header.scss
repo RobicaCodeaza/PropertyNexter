@@ -11,10 +11,11 @@
       url(/src/img/back.webp);
     background-size: cover;
     background-position: center;
-    padding: 8rem;
-    padding-top: 4rem;
+    // padding-top: 4rem;
 
     display: grid;
+    padding: 15rem 5rem;
+    padding-bottom: 8rem;
     grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
     grid-template-columns: minmax(min-content, max-content);
     justify-content: center;
@@ -89,6 +90,8 @@
 
       @include respond(phone) {
         grid-template-columns: min-content max-content;
+
+        align-items: stretch;
       }
     }
     &__img {

@@ -159,11 +159,11 @@ sliders();
 
 // Adding smooth scroll from scrollIntoView
 let houseRealtor;
-const allBtnLinks = document.querySelectorAll('.btn');
+const allBtnLinks = document.querySelectorAll('.btn--smooth');
 allBtnLinks.forEach((btn) => {
-  if (btn.classList.contains('home__btn')) {
-    return;
-  }
+  // if (btn.classList.contains('home__btn')) {
+  //   return;
+  // }
   btn.addEventListener('click', function (e) {
     e.preventDefault();
 
