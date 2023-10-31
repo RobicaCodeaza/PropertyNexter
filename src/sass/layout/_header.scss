@@ -90,8 +90,6 @@
 
       @include respond(phone) {
         grid-template-columns: min-content max-content;
-
-        align-items: stretch;
       }
     }
     &__img {
