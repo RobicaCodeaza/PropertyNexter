@@ -1,6 +1,6 @@
 'use strict';
 
-// Adding Media queries Variables
+//-------------- Adding Media queries Variables --------------
 
 const phoneMedia = window.matchMedia('(max-width: 37.5em)');
 const tabPortMedia = window.matchMedia('(max-width: 56.25em)');
@@ -8,54 +8,97 @@ const tabLandMedia = window.matchMedia('(max-width: 75em)');
 const smallLaptopMedia = window.matchMedia('(max-width: 98.5em)');
 const bigDesktopMedia = window.matchMedia('(min-width: 120em)');
 const tabPortBiggerMedia = window.matchMedia('(min-width: 56.25em)');
-
 const homes = document.querySelector('.homes-content');
 const homeArray = document.querySelectorAll('.home');
 
-// Adding overlay to every home
+// -------------- Implementing navigation --------------
 
-const findDetailsWidth = function (home, homes) {
-  let columns = 3;
-  const homePreview = home.querySelector('.home__preview');
-  if (tabPortMedia.matches) {
-    console.log('matches');
-    columns = 2;
+const navigation = document.querySelector('.navigation');
+const navBar = document.querySelector('.navigation__nav');
+const navList = document.querySelector('.navigation__list');
+const navBtn = document.querySelector('.navigation-btn');
+const iconClose = document.getElementById('icon-close');
+const iconOpen = document.getElementById('icon-open');
+const openNavBar = function (e) {
+  if (!e.target.closest('.navigation-btn')) return;
+  if (phoneMedia.matches) {
+    navBar.classList.add('navigation__nav--active');
+  } else {
+    navigation.classList.add('navigation--active');
   }
 
-  const homePreviewWidth =
-    Number.parseFloat(homePreview.getBoundingClientRect().width, 10) *
-    (columns - 1);
-  const homesGap =
-    Number.parseFloat(getComputedStyle(homes).gap, 10) * (columns - 1);
-  return homesGap + homePreviewWidth;
+  iconClose.classList.remove('display-none');
+  iconOpen.classList.add('display-none');
+  navBar.classList.add('navigation__nav--active');
+  navList.classList.add('navigation__list--active');
+};
+const closeNavBar = function (e) {
+  if (!e.target.closest('.navigation-btn') && this === false) return;
+  if (phoneMedia.matches) {
+    navBar.classList.remove('navigation__nav--active');
+  } else {
+    navigation.classList.remove('navigation--active');
+  }
+  iconClose.classList.add('display-none');
+  iconOpen.classList.remove('display-none');
+  navBar.classList.remove('navigation__nav--active');
+  navList.classList.remove('navigation__list--active');
+};
+iconOpen.addEventListener('click', openNavBar);
+iconClose.addEventListener('click', closeNavBar.bind(false));
+
+// - Making it sticky
+const navHeight = navigation.getBoundingClientRect().height;
+const header = document.querySelector('.header');
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  if (entry.isIntersecting === false)
+    navigation.classList.add('navigation--sticky');
+  else navigation.classList.remove('navigation--sticky');
 };
 
-const previewHome = function (e) {
-  if (!e.target.closest('.home-name-btn')) return;
-  const home = e.target.closest('.home');
-  const homeDetails = home.querySelector('.home__details');
-  const homeDetailsWidth = findDetailsWidth(home, this);
-  const btnIcon = home.querySelector('.home-name-btn__icon');
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `${-navHeight}px`,
+});
+headerObserver.observe(header);
 
-  homeArray.forEach((otherHome) => {
-    if (otherHome !== home) {
-      otherHome.style.setProperty('grid-row', 'auto');
-      const homeDetails = otherHome.querySelector('.home__details');
-      const btnIcon = otherHome.querySelector('.home-name-btn__icon');
-      btnIcon.classList.remove('rotated');
-      otherHome.classList.remove('home-active');
-      homeDetails.classList.add('display-none');
+// -------------- Adding smooth scroll from scrollIntoView --------------
+
+let houseRealtor;
+const allBtnLinks = document.querySelectorAll('.btn--smooth');
+allBtnLinks.forEach((btn) => {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const id = e.target.getAttribute('href');
+    if (e.target.classList.contains('navigation__link') && phoneMedia.matches) {
+      //Auto-close navbar on moving to section when we re on the phone
+      closeNavBar.bind(true)(e);
     }
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   });
-  btnIcon.classList.toggle('rotated');
-  homeDetails.style.setProperty('flex-basis', `${homeDetailsWidth}px`);
-  home.classList.toggle('home-active');
-  homeDetails.classList.toggle('display-none');
-  home.scrollIntoView({ behavior: 'smooth', block: 'center' });
-};
-homes.addEventListener('click', previewHome);
+});
 
-// -------------------------------------------------------
+const detailsContent = document.querySelector('.details__content');
+const detailAll = document.querySelectorAll('.details__content__item');
+detailsContent.addEventListener('click', function (e) {
+  if (!e.target.closest('.details__content__item')) return;
+
+  const detail = e.target.closest('.details__content__item');
+
+  detailAll.forEach((detailDiff) => {
+    if (detail !== detailDiff)
+      detailDiff.classList.remove('details__content__item--active');
+  });
+  detailsContent.scrollTop = detail.clientHeight * detail.dataset.tab - '25';
+  detail.classList.add('details__content__item--active');
+  const player = detail.querySelector('.lottie-animation-details');
+  loadingLottie(player, player.src);
+});
+
+//-------------- Implementing loading animation --------------
 
 const quoteAnimationTestimonials = document.querySelector(
   '.lottie-animation-testimonials'
@@ -64,8 +107,6 @@ const quoteAnimationTestimonials = document.querySelector(
 const loadingLottie = async function (player, url, speed = 2) {
   try {
     await player.load(`${url}`);
-    // player.setAttribute('background', 'red');
-    console.log('Loading', player);
 
     // setTimeout(() => {
     player.setSpeed(speed);
@@ -73,9 +114,12 @@ const loadingLottie = async function (player, url, speed = 2) {
     player.play();
     // }, 1000);
   } catch (err) {
-    console.log(err);
+    alert(err);
   }
 };
+
+// -------------- Implementing Testimonials Sliders --------------
+
 loadingLottie(quoteAnimationTestimonials, quoteAnimationTestimonials.src);
 
 const sliders = async function () {
@@ -116,12 +160,9 @@ const sliders = async function () {
     };
 
     const nextSlide = function () {
-      console.log(currentSlide, maxSlide);
       if (currentSlide === maxSlide) {
-        console.log('entered');
         currentSlide = 0;
       } else currentSlide++;
-      console.log(currentSlide, maxSlide);
       goToSlide(currentSlide);
       activateDot(currentSlide);
     };
@@ -151,62 +192,24 @@ const sliders = async function () {
       }
     });
   } catch (err) {
-    console.log(err);
+    alert(err);
   }
 };
 
 sliders();
 
-// Adding smooth scroll from scrollIntoView
-let houseRealtor;
-const allBtnLinks = document.querySelectorAll('.btn--smooth');
-allBtnLinks.forEach((btn) => {
-  // if (btn.classList.contains('home__btn')) {
-  //   return;
-  // }
-  btn.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-const detailsContent = document.querySelector('.details__content');
-const detailAll = document.querySelectorAll('.details__content__item');
-detailsContent.addEventListener('click', function (e) {
-  if (!e.target.closest('.details__content__item')) return;
-
-  const detail = e.target.closest('.details__content__item');
-
-  detailAll.forEach((detailDiff) => {
-    if (detail !== detailDiff)
-      detailDiff.classList.remove('details__content__item--active');
-  });
-  detailsContent.scrollTop = detail.clientHeight * detail.dataset.tab - '25';
-  detail.classList.add('details__content__item--active');
-  const player = detail.querySelector('.lottie-animation-details');
-  loadingLottie(player, player.src);
-  // player.stop();
-  // player.play();
-});
-// 027BFF
-
-// --------------------
-// OBSERVING DETAILS CONTENT
+//-------------- Observing Details Content In order to apply animations --------------
 
 const detailsContentInView = async function (entries, observer) {
   try {
     const [entry] = entries;
     if (!entry.isIntersecting) {
-      console.log('is not intersecting');
       return;
     }
 
     const detailsItemPulsating = document.querySelector(
       `.details__content__item[data-tab="1"]`
     );
-    console.log('is intersecting');
     detailsItemPulsating.style.animation = '';
     setTimeout(() => {
       detailsItemPulsating.style.animation = '1.5s linear pulsate 2';
@@ -232,5 +235,44 @@ const detailsContentObserver = new IntersectionObserver(
 
 detailsContentObserver.observe(detailsContent);
 
-console.log(houseRealtor);
-export default houseRealtor;
+//-------------- Adding overlay to every home --------------
+
+const findDetailsWidth = function (home, homes) {
+  let columns = 3;
+  const homePreview = home.querySelector('.home__preview');
+  if (tabPortMedia.matches) {
+    columns = 2;
+  }
+
+  const homePreviewWidth =
+    Number.parseFloat(homePreview.getBoundingClientRect().width, 10) *
+    (columns - 1);
+  const homesGap =
+    Number.parseFloat(getComputedStyle(homes).gap, 10) * (columns - 1);
+  return homesGap + homePreviewWidth;
+};
+
+const previewHome = function (e) {
+  if (!e.target.closest('.home-name-btn')) return;
+  const home = e.target.closest('.home');
+  const homeDetails = home.querySelector('.home__details');
+  const homeDetailsWidth = findDetailsWidth(home, this);
+  const btnIcon = home.querySelector('.home-name-btn__icon');
+
+  homeArray.forEach((otherHome) => {
+    if (otherHome !== home) {
+      otherHome.style.setProperty('grid-row', 'auto');
+      const homeDetails = otherHome.querySelector('.home__details');
+      const btnIcon = otherHome.querySelector('.home-name-btn__icon');
+      btnIcon.classList.remove('rotated');
+      otherHome.classList.remove('home-active');
+      homeDetails.classList.add('display-none');
+    }
+  });
+  btnIcon.classList.toggle('rotated');
+  homeDetails.style.setProperty('flex-basis', `${homeDetailsWidth}px`);
+  home.classList.toggle('home-active');
+  homeDetails.classList.toggle('display-none');
+  home.scrollIntoView({ behavior: 'smooth', block: 'center' });
+};
+homes.addEventListener('click', previewHome);

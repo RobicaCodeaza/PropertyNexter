@@ -8,13 +8,22 @@
         rgba($color-secondary, 0.6),
         rgba($color-secondary, 0.85)
       ),
-      url(/src/img/back.webp);
+      url(/src/img/back-small.webp);
     background-size: cover;
     background-position: center;
     // padding-top: 4rem;
 
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+      (min-width: 125em) {
+      background-image: linear-gradient(
+          rgba($color-secondary, 0.6),
+          rgba($color-secondary, 0.85)
+        ),
+        url(/src/img/back.webp);
+    }
+
     display: grid;
-    padding: 15rem 5rem;
+    padding: 20rem 5rem;
     padding-bottom: 8rem;
     grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
     grid-template-columns: minmax(min-content, max-content);
