@@ -17,8 +17,8 @@ const navigation = document.querySelector('.navigation');
 const navBar = document.querySelector('.navigation__nav');
 const navList = document.querySelector('.navigation__list');
 const navBtn = document.querySelector('.navigation-btn');
-const iconClose = document.getElementById('icon-close');
-const iconOpen = document.getElementById('icon-open');
+const iconClose = document.querySelector('.icon-close');
+const iconOpen = document.querySelector('.icon-open');
 const openNavBar = function (e) {
   if (!e.target.closest('.navigation-btn')) return;
   if (phoneMedia.matches) {
