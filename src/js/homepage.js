@@ -92,7 +92,10 @@ detailsContent.addEventListener('click', function (e) {
     if (detail !== detailDiff)
       detailDiff.classList.remove('details__content__item--active');
   });
-  detailsContent.scrollTop = detail.clientHeight * detail.dataset.tab - '25';
+  if (phoneMedia.matches) {
+    detailsContent.scrollTop = detail.clientHeight * detail.dataset.tab - '35';
+  } else detailsContent.scrollTop = detail.clientHeight * detail.dataset.tab - '25';
+
   detail.classList.add('details__content__item--active');
   const player = detail.querySelector('.lottie-animation-details');
   loadingLottie(player, player.src);
