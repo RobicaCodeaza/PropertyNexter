@@ -88,7 +88,7 @@
       }
 
       @include respond(phone) {
-        grid-template-columns: min-content max-content;
+        // grid-template-columns: min-content max-content;
       }
     }
     &__img {
