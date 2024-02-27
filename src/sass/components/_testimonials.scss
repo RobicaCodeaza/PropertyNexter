@@ -6,7 +6,6 @@
   justify-self: end;
   position: relative;
   height: 40rem;
-  background-color: #fff;
   display: flex;
   @include respond(particular-small-laptop) {
     width: 100%;
@@ -16,13 +15,8 @@
   }
   @include respond(phone) {
     grid-column: full-start / full-end;
+    padding: 0 2rem;
   }
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-  }
-
   &__slider {
     flex: 1;
     height: 100%;
@@ -74,6 +68,14 @@
   padding: 6.5rem;
   line-height: 2.2rem;
   transition: all 0.5s;
+  overflow-y: scroll;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @include respond(tab-land) {
     padding: 5rem 4.5rem;
@@ -81,7 +83,9 @@
   @include respond(tab-port) {
     padding: 3.5rem 4.5rem;
   }
-
+  @include respond(phone) {
+    padding: 2.5rem 3.5rem;
+  }
   &__profile {
     display: flex;
     align-items: center;

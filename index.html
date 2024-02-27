@@ -16,25 +16,98 @@
       href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i"
       rel="stylesheet"
     />
-    <script src="/node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"></script>
+    <script
+      src="/node_modules/@lottiefiles/lottie-player/dist/tgs-player.js"
+      type="module"
+    ></script>
     <link rel="stylesheet" href="./src/sass/style.scss" />
-    <script type="module" defer src="homepage.js"></script>
+    <script type="module" defer src="./src/js/homepage.js"></script>
     <title>RealProperty &mdash; your home, your freedom</title>
   </head>
   <body class="container">
-    <div class="navbar">
-      <button class="nav-btn"></button>
+    <div class="navigation">
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#section--features" class="navigation__link btn--smooth"
+              >Features</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#section--homes" class="navigation__link btn--smooth"
+              >Homes</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="contact.html" class="navigation__link">Contact-us</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#section--details" class="navigation__link btn--smooth"
+              >How We work</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a
+              href="#section--testimonials"
+              class="navigation__link btn--smooth"
+              >Reviews</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <button class="navigation-btn">
+        <svg
+          class="navigation-btn-icon icon-open"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+
+        <svg
+          class="navigation-btn-icon icon-close display-none"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
     </div>
+
     <header class="header">
       <div class="header__hero">
-        <img
-          src="/src/img/logo.png"
-          alt="Nexter Logo"
-          class="header__hero__logo"
-        />
+        <picture class="header__hero__logo">
+          <source
+            srcset="
+              /src/img/logo-small-1x.png 1x,
+              /src/img/logo-small-2x.png 2x
+            "
+            media="(max-width:37.5em)"
+          />
+          <img
+            srcset="/src/img/logo-1x.png 1x, /src/img/logo-2x.png 2x"
+            alt="Nexter Logo"
+          />
+        </picture>
         <h3 class="heading-3">Your own home:</h3>
         <h1 class="heading-1">The ultimate personal freedom</h1>
-        <a class="btn btn--header__hero" href="#section--homes"
+        <a class="btn btn--header__hero btn--smooth" href="#section--homes"
           >View our properties</a
         >
         <div class="header__hero__seenon-text">As seen on</div>
@@ -48,31 +121,68 @@
       <div class="header__realtors">
         <h3 class="heading-3">Top 3 realtors</h3>
         <div class="header__realtors__list">
-          <img
-            src="/src/img/realtor-1.webp"
-            alt="Realtor img"
-            class="header__realtors__img"
-          />
+          <picture>
+            <source
+              srcset="
+                /src/img/realtor-1-small-1x.webp 1x,
+                /src/img/realtor-1-small-2x.webp 2x
+              "
+              media="(max-width:37.5em)"
+            />
+            <img
+              srcset="
+                /src/img/realtor-1-1x.webp 1x,
+                /src/img/realtor-1-2x.webp 2x
+              "
+              class="header__realtors__img"
+              alt="Realtor img"
+            />
+          </picture>
+
           <div class="header__realtors__details">
             <h4 class="heading-4 heading-4--light">Erik Feinman</h4>
             <p class="header__realtors__sold">245 houses sold</p>
           </div>
 
-          <img
-            src="/src/img/realtor-2.webp"
-            alt="Realtor img"
-            class="header__realtors__img"
-          />
+          <picture>
+            <source
+              srcset="
+                /src/img/realtor-2-small-1x.webp 1x,
+                /src/img/realtor-2-small-2x.webp 2x
+              "
+              media="(max-width:37.5em)"
+            />
+            <img
+              srcset="
+                /src/img/realtor-2-1x.webp 1x,
+                /src/img/realtor-2-2x.webp 2x
+              "
+              class="header__realtors__img"
+              alt="Realtor img"
+            />
+          </picture>
           <div class="header__realtors__details">
             <h4 class="heading-4 heading-4--light">Kim Brown</h4>
             <p class="header__realtors__sold">225 houses sold</p>
           </div>
 
-          <img
-            src="/src/img/realtor-3.webp"
-            alt="Realtor img"
-            class="header__realtors__img"
-          />
+          <picture>
+            <source
+              srcset="
+                /src/img/realtor-3-small-1x.webp 1x,
+                /src/img/realtor-3-small-2x.webp 2x
+              "
+              media="(max-width:37.5em)"
+            />
+            <img
+              srcset="
+                /src/img/realtor-3-1x.webp 1x,
+                /src/img/realtor-3-2x.webp 2x
+              "
+              class="header__realtors__img"
+              alt="Realtor img"
+            />
+          </picture>
           <div class="header__realtors__details">
             <h4 class="heading-4 heading-4--light">Toby Ramsey</h4>
             <p class="header__realtors__sold">190 houses sold</p>
@@ -80,7 +190,7 @@
         </div>
       </div>
     </header>
-    <section class="section section--features">
+    <section class="section section--features" id="section--features">
       <h2 class="heading-2 heading-2--features aligned-title mb-sm">
         Take our word for granted!
       </h2>
@@ -185,11 +295,11 @@
           distinctio necessitatibus pariatur voluptatibus. Quidem consequatur
           harum volupta!
         </p>
-        <a class="btn" href="#section--homes">Find your own home</a>
+        <a class="btn btn--smooth" href="#section--homes">Find your own home</a>
       </div>
     </section>
-    <section class="section section--testimonials">
-      <h2 class="heading-2 heading-2--testimonials mb-hg" style="z-index: 9">
+    <section class="section section--testimonials" id="section--testimonials">
+      <h2 class="heading-2 heading-2--testimonials mb-hg" style="z-index: 1">
         Your opinion always matters for us!
       </h2>
       <div class="section--testimonials__background"></div>
@@ -801,7 +911,7 @@
         </div>
       </div>
     </section>
-    <section class="section section--details">
+    <section class="section section--details" id="section--details">
       <h3 class="heading-3 mb-sm aligned-title">Transparency is our devise</h3>
       <h2 class="heading-2 heading-2--features aligned-title mb-hg">
         How our communication will work
@@ -837,10 +947,6 @@
           </li>
           <li class="details__content__item" data-tab="1">
             <lottie-player
-              srcset="
-              /src/assets/logo-green-small-1x.png 1x,
-              /src/assets/logo-green-small-2x.png 2x
-            "
               media="(max-width:56.25em)"
               class="lottie-animation-details-cursor"
               mode="normal"
@@ -969,14 +1075,6 @@
         />
       </figure>
 
-      <figure class="gallery__item gallery__item--6">
-        <img
-          src="/src/img/gal-6.webp"
-          alt="Gallery Image 6"
-          class="gallery__img"
-        />
-      </figure>
-
       <figure class="gallery__item gallery__item--7">
         <img
           src="/src/img/gal-7.webp"
@@ -1043,20 +1141,25 @@
     <footer class="footer">
       <ul class="nav">
         <li class="nav__item">
-          <a href="#" class="nav__link">Find your dream home</a>
+          <a href="#section--homes" class="nav__link btn--smooth"
+            >Find your dream home</a
+          >
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">Request proposal</a>
+          <a href="#section--features" class="nav__link btn--smooth"
+            >Our demises</a
+          >
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">Download home planner</a>
-        </li>
-        <li class="nav__item"><a href="#" class="nav__link">Contact us</a></li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">Submit your property</a>
+          <a href="#" class="nav__link btn--smooth">Download home planner</a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">Come work with us</a>
+          <a href="contact.html" class="nav__link">Contact us</a>
+        </li>
+        <li class="nav__item">
+          <a href="#section--testimonials" class="nav__link btn--smooth"
+            >See Our clients reviews</a
+          >
         </li>
       </ul>
       <p class="copyright">

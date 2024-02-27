@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-rows:
-    5rem calc(100dvh - 5rem) min-content 50vw 100vh
+    100dvh min-content max(50vw, 100dvh) max-content
     min-content minmax(min-content, 100dvh) min-content;
   grid-template-columns:
     [ full-start] minmax(6rem, 1fr)
@@ -12,11 +12,15 @@
     minmax(6rem, 1fr) [full-end];
 
   @include respond(tab-port) {
-    grid-template-rows: 6rem calc(100dvh - 6rem) repeat(
-        auto-fit,
+    grid-template-rows: max-content min-content repeat(
+        6,
         minmax(min-content, 50vw)
       );
-
+    grid-template-columns:
+      [ full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr) [full-end];
     // repeat min- content been removed as the size will be calculated in terms of min-content automatically
   }
 }
@@ -26,7 +30,7 @@
   grid-template-columns: subgrid;
 
   @include respond(tab-port) {
-    grid-template-rows: 1fr min-content;
+    grid-template-rows: 1fr max-content;
   }
 }
 
@@ -39,6 +43,10 @@
   &--features {
     align-content: center;
     padding: 10rem 0 15rem 0;
+
+    @include respond(phone) {
+      padding: 10rem 0;
+    }
   }
   &--story {
   }
@@ -52,26 +60,54 @@
       right: 0;
       top: 0;
       height: 100%;
-      width: 50%;
+      width: 100%;
+      grid-column: col-start 5 / full-end;
+
       background-image: linear-gradient(
           rgba($color-primary, 0.25),
           rgba($color-secondary, 0.75)
         ),
-        url(/src//img/back1.jpg);
+        url(/src//img/back1-small.webp);
       background-size: cover;
       @include respond(phone) {
-        width: 100%;
+        grid-column: full-start/full-end;
       }
     }
+
+    @media (min-resolution: 192dpi) and (max-width: 112.5em) {
+      //background-image-medium
+      //  1800 1800 - 2x max-width(56.25em)
+      background-image: linear-gradient(
+          rgba($color-primary, 0.25),
+          rgba($color-secondary, 0.75)
+        ),
+        url(/src//img/back1.webp);
+    }
+    @media (min-resolution: 192dpi) and (min-width: 112.5em) {
+      //background-image big
+      // 2000 2000 - 2x min-width(56.25em)
+      background-image: linear-gradient(
+          rgba($color-primary, 0.25),
+          rgba($color-secondary, 0.75)
+        ),
+        url(/src//img/back1-big.webp);
+    }
     @include respond(phone) {
-      padding: 15rem 5rem;
+      padding: 15rem 0;
     }
   }
   &--homes {
     background-color: $color-grey;
     padding: 20rem 0;
+    @include respond(phone) {
+      padding: 15rem 0;
+    }
   }
   &--details {
     padding: 15rem 0 20rem 0;
+
+    @include respond(phone) {
+      padding: 15rem 0;
+    }
   }
 }

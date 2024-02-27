@@ -134,11 +134,15 @@
         flex-direction: column;
       }
       @include respond(phone) {
-        flex-direction: row;
+        // flex-direction: row;
+        border: 1px dashed $color-grey-light-2;
       }
     }
     @include respond(tab-port) {
       height: 60rem;
+    }
+    @include respond(phone) {
+      height: 85rem;
     }
   }
   @include respond(tab-port) {
@@ -146,6 +150,7 @@
   }
   @include respond(phone) {
     flex-direction: column;
+    padding: 0 2.5rem;
   }
 }
 
@@ -159,6 +164,10 @@
     margin-bottom: 1.2rem;
     height: 10rem;
     width: 22rem;
+  }
+  @include respond(phone) {
+    height: 6rem;
+    width: 15rem;
   }
 }
 
