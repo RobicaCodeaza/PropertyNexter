@@ -86,20 +86,29 @@
     @include respond(tab-port) {
       grid-column: 1/-1;
     }
-
+    &__details {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
     &__list {
       display: grid;
-      grid-template-columns: min-content max-content;
+      grid-template-columns: max-content;
       gap: 5vh 2rem;
       align-items: center;
 
       @include respond(tab-port) {
-        grid-template-columns: repeat(3, min-content max-content);
+        // grid-template-columns: repeat(auto-fit, min-content max-content);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3.2rem;
+        justify-content: center;
       }
-
-      @include respond(phone) {
-        // grid-template-columns: min-content max-content;
-      }
+    }
+    &__item {
+      display: flex;
+      gap: 1.2rem;
     }
     &__img {
       width: 6rem;
